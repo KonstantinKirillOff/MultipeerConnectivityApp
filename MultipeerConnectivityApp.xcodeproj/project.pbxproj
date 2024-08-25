@@ -11,6 +11,10 @@
 		43CDC3CD2C7B5E92008F13AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3CC2C7B5E92008F13AE /* ContentView.swift */; };
 		43CDC3CF2C7B5E93008F13AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CDC3CE2C7B5E93008F13AE /* Assets.xcassets */; };
 		43CDC3D22C7B5E93008F13AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CDC3D12C7B5E93008F13AE /* Preview Assets.xcassets */; };
+		43CDC3DD2C7B6324008F13AE /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3DC2C7B6324008F13AE /* MessageModel.swift */; };
+		43CDC3E12C7B63BF008F13AE /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E02C7B63BF008F13AE /* MultipeerManager.swift */; };
+		43CDC3E32C7B6852008F13AE /* MultipeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */; };
+		43CDC3E52C7B6E06008F13AE /* MultipeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		43CDC3CC2C7B5E92008F13AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		43CDC3CE2C7B5E93008F13AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CDC3D12C7B5E93008F13AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43CDC3DC2C7B6324008F13AE /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		43CDC3E02C7B63BF008F13AE /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
+		43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerViewModel.swift; sourceTree = "<group>"; };
+		43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerBrowser.swift; sourceTree = "<group>"; };
+		43CDC3E62C7BB39D008F13AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +60,10 @@
 		43CDC3C92C7B5E92008F13AE /* MultipeerConnectivityApp */ = {
 			isa = PBXGroup;
 			children = (
-				43CDC3CA2C7B5E92008F13AE /* MultipeerConnectivityAppApp.swift */,
-				43CDC3CC2C7B5E92008F13AE /* ContentView.swift */,
-				43CDC3CE2C7B5E93008F13AE /* Assets.xcassets */,
+				43CDC3E62C7BB39D008F13AE /* Info.plist */,
+				43CDC3D92C7B6295008F13AE /* Resources */,
+				43CDC3D82C7B627E008F13AE /* App */,
+				43CDC3DA2C7B62AE008F13AE /* Modules */,
 				43CDC3D02C7B5E93008F13AE /* Preview Content */,
 			);
 			path = MultipeerConnectivityApp;
@@ -65,6 +75,58 @@
 				43CDC3D12C7B5E93008F13AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43CDC3D82C7B627E008F13AE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3CA2C7B5E92008F13AE /* MultipeerConnectivityAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		43CDC3D92C7B6295008F13AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3CE2C7B5E93008F13AE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43CDC3DA2C7B62AE008F13AE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3DB2C7B6301008F13AE /* Multipeer */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		43CDC3DB2C7B6301008F13AE /* Multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3DF2C7B639F008F13AE /* Services */,
+				43CDC3DE2C7B632A008F13AE /* Models */,
+				43CDC3CC2C7B5E92008F13AE /* ContentView.swift */,
+				43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */,
+				43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */,
+			);
+			path = Multipeer;
+			sourceTree = "<group>";
+		};
+		43CDC3DE2C7B632A008F13AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3DC2C7B6324008F13AE /* MessageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43CDC3DF2C7B639F008F13AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				43CDC3E02C7B63BF008F13AE /* MultipeerManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +200,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CDC3CD2C7B5E92008F13AE /* ContentView.swift in Sources */,
+				43CDC3E32C7B6852008F13AE /* MultipeerViewModel.swift in Sources */,
+				43CDC3DD2C7B6324008F13AE /* MessageModel.swift in Sources */,
 				43CDC3CB2C7B5E92008F13AE /* MultipeerConnectivityAppApp.swift in Sources */,
+				43CDC3E52C7B6E06008F13AE /* MultipeerBrowser.swift in Sources */,
+				43CDC3E12C7B63BF008F13AE /* MultipeerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +341,9 @@
 				DEVELOPMENT_TEAM = 5VBQ98K5MQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultipeerConnectivityApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app requires access to your local network to connect with nearby devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +373,9 @@
 				DEVELOPMENT_TEAM = 5VBQ98K5MQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultipeerConnectivityApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app requires access to your local network to connect with nearby devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
