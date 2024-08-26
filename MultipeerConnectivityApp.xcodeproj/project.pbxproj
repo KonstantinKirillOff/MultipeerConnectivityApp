@@ -14,7 +14,6 @@
 		43CDC3DD2C7B6324008F13AE /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3DC2C7B6324008F13AE /* MessageModel.swift */; };
 		43CDC3E12C7B63BF008F13AE /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E02C7B63BF008F13AE /* MultipeerManager.swift */; };
 		43CDC3E32C7B6852008F13AE /* MultipeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */; };
-		43CDC3E52C7B6E06008F13AE /* MultipeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		43CDC3DC2C7B6324008F13AE /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		43CDC3E02C7B63BF008F13AE /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerViewModel.swift; sourceTree = "<group>"; };
-		43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerBrowser.swift; sourceTree = "<group>"; };
 		43CDC3E62C7BB39D008F13AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +106,6 @@
 				43CDC3DE2C7B632A008F13AE /* Models */,
 				43CDC3CC2C7B5E92008F13AE /* ContentView.swift */,
 				43CDC3E22C7B6852008F13AE /* MultipeerViewModel.swift */,
-				43CDC3E42C7B6E06008F13AE /* MultipeerBrowser.swift */,
 			);
 			path = Multipeer;
 			sourceTree = "<group>";
@@ -203,7 +200,6 @@
 				43CDC3E32C7B6852008F13AE /* MultipeerViewModel.swift in Sources */,
 				43CDC3DD2C7B6324008F13AE /* MessageModel.swift in Sources */,
 				43CDC3CB2C7B5E92008F13AE /* MultipeerConnectivityAppApp.swift in Sources */,
-				43CDC3E52C7B6E06008F13AE /* MultipeerBrowser.swift in Sources */,
 				43CDC3E12C7B63BF008F13AE /* MultipeerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

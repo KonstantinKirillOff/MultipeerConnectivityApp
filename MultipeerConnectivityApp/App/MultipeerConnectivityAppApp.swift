@@ -11,7 +11,7 @@ import SwiftUI
 struct MultipeerConnectivityAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: MultipeerViewModel()) //multipeerManager: MultipeerManager()
+            ContentView(viewModel: MultipeerViewModel(multipeerManager: MultipeerManager()))
         }
     }
 }

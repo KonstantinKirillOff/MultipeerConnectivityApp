@@ -5,59 +5,6 @@
 //  Created by Konstantin Kirillov on 25.08.2024.
 //
 
-//import SwiftUI
-//
-//struct ContentView: View {
-//    @StateObject var viewModel: MultipeerViewModel
-//    @State private var messageText = ""
-//    @State private var isBrowserShow = false
-//    
-//    var body: some View {
-//        VStack {
-//            List(viewModel.receivedMessages, id: \.id) { message in
-//                VStack {
-//                    Text("from: \(message.sender)")
-//                    Text(message.text)
-//                    
-//                }
-//                .frame(width: .infinity, alignment: .leading)
-//            }
-//            Spacer()
-//            HStack {
-//                TextField("Enter your message", text: $messageText)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .padding()
-//                Button(action: {
-//                    viewModel.sendMessage(text: messageText)
-//                    messageText = ""
-//                }, label: {
-//                    Text("Send")
-//                })
-//            }
-//            VStack {
-//                Button(action: {
-//                    viewModel.startAdvertising()
-//                }, label: {
-//                    Text("Advertise")
-//                })
-//                .padding()
-//                
-//                List(viewModel.availablePeers, id: \.self) { peerID in
-//                    Button(action: {
-//                        viewModel.invitePeer(peerID)
-//                    }) {
-//                        Text(peerID.displayName)
-//                    }
-//                }
-//            }
-//        }
-//        .sheet(isPresented: $isBrowserShow) {
-//            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Sheet Content")/*@END_MENU_TOKEN@*/
-//        }
-//
-//    }
-//}
-
 import SwiftUI
 
 struct ContentView: View {
@@ -67,9 +14,32 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Session state: \(viewModel.sessionState)")
+            Text("Messages:")
+                .font(.title2)
             List(viewModel.receivedMessages) { message in
-                Text("\(message.sender): \(message.text)")
+                VStack {
+                    Text("\(message.sender): \(message.text)")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(8)
+                .shadow(radius: 4)
+                .listRowSeparator(.hidden)
+            }
+            .listStyle(.plain)
+            
+            
+            if !viewModel.availablePeers.isEmpty {
+                Text("Advertisers:")
+                    .font(.title2)
+                List(Array(viewModel.availablePeers), id: \.self) { peerID in
+                    Button(action: {
+                        viewModel.invitePeer(peerID)
+                    }) {
+                        Text(peerID.displayName)
+                    }
+                }
             }
             
             HStack {
@@ -82,22 +52,26 @@ struct ContentView: View {
                 }
             }
             
-            Button("Advertise") {
-                viewModel.startAdvertising()
+            Text("Session state: \(viewModel.sessionState)")
+            HStack(spacing: 20) {
+                Button("Advertise") {
+                    viewModel.startAdvertising()
+                }
+                
+                Button("Browse") {
+                    viewModel.startBrowser()
+                }
+                
+                Button("Disconnect") {
+                    viewModel.disconnect()
+                }
             }
-            
-            Button("Browse") {
-                viewModel.startBrowser()
-            }
-            
-            Button("Disconnect") {
-                viewModel.disconnect()
-            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding()
     }
 }
 
 #Preview {
-    ContentView(viewModel: MultipeerViewModel())
+    ContentView(viewModel: MultipeerViewModel(multipeerManager: MultipeerManager()))
 }
